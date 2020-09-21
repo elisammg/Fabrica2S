@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Pedidos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Fabrica de repuestos GUATEMALA</h1>
+    <h2>Pedidos por cliente</h2>
+    <hr>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha de Recibido</th>
+            <th>Fecha de entrega</th>
+            <th>Estado</th>
+            <th>Cliente</th>
+            <th>Precio final</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pedido:${pedidos}">
+            <td th:text="${pedido.id}"></td>
+            <td type="date" th:text="${pedido.fecha_recibido}"></td>
+            <td th:text="${pedido.fecha_entrega}"></td>
+            <td th:text="${pedido.estado}"></td>
+            <td th:text="${pedido.clientes}"></td>
+            <td th:text="${pedido.precio_final}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
+</body>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>

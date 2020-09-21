@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Carro Nuevo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="col-sm-6">
+        <form th:action="@{/savecarro}" th:object="${carros}" method="post">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Modulo Carros</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Id</label>
+                        <input class="form-control" type="text" th:field="*{id}">
+                    </div>
+                    <div class="form-group">
+                        <label>Codigo Universal</label>
+                        <input class="form-control" type="number" th:field="*{codigo_universal}">
+                    </div>
+                    <div class="form-group">
+                        <label>Marca</label>
+                        <input class="form-control" type="text" th:field="*{marca}">
+                    </div>
+                    <div class="form-group">
+                        <label>Linea</label>
+                        <input class="form-control" type="text" th:field="*{linea}">
+                    </div>
+                    <div class="form-group">
+                        <label>Modelo</label>
+                        <input class="form-control" type="number" th:field="*{modelo}">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Guardar" class="btn btn-success">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>

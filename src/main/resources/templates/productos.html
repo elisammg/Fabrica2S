@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Fabrica de repuestos GUATEMALA</h1>
+    <h2>Modulo de Productos</h2>
+    <a th:href="@{/carros}" class="btn btn-primary">Carros</a>
+    <a th:href="@{/listar}" class="btn btn-primary">Clientes</a>
+    <a th:href="@{/productos}" class="btn btn-primary">Productos</a>
+    <a th:href="@{/pedidos}" class="btn btn-primary">Pedidos</a>
+    <a th:href="@{/listausuarios}" class="btn btn-primary">Usuarios</a>
+    <hr>
+    <a th:href="@{/productonuevo}" class="btn btn-secondary">Producto Nuevo</a>
+    <hr>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Vehiculos</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="producto:${productos}">
+            <td th:text="${producto.id}"></td>
+            <td th:text="${producto.nombre}"></td>
+            <td th:text="${producto.descripcion}"></td>
+            <td th:text="${producto.carros}"></td>
+            <td th:text="${producto.precio}"></td>
+            <td><img th:src="@{${producto.imagenurl}}"></td>
+            <td>
+                <a class="btn btn-warning" th:href="@{/editarproducto/}+${producto.id}">Editar</a>
+                <a class="btn btn-danger" th:href="@{/eliminarproducto/}+${producto.id}">Borrar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+
+
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
+</body>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>
