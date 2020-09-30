@@ -49,7 +49,7 @@ public class Controlador {
     @GetMapping("/eliminar/{id}")
     public String delete(Model modelo, @PathVariable String id)
     {
-        service.delete(id);
+      if (true) service.delete(id);
         return "redirect:/listar";
     }
 }
