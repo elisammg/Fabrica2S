@@ -13,7 +13,7 @@ name: default
 
 steps:
 - name: build
-  image: fabrica-drone
+  image: fabrica-drone-1
   commands:
   - go build
   - go test
