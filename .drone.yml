@@ -6,3 +6,21 @@ steps:
   image: maven:3-jdk-10
   commands:
   - mvn install
+
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: build
+  image: fabrica-drone
+  commands:
+  - go build
+  - go test
+
+trigger:
+  branch:
+  - master
+  - Dev/*
+  - Uat/*
+  - Prod/*
